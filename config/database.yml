@@ -56,5 +56,5 @@ production:
 local: 
   <<: *default
   database: rails_cap_local
-  username: rails_cap
-  password: 'root'
+  username: root
+  password: root
