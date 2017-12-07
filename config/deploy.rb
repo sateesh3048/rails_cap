@@ -46,5 +46,12 @@ namespace :deploy do
       p "I am inside print_msg<<<<<<<<<<<888888888888888"
     end
   end
+  desc "This is clean up task"
+  task :clean_up do 
+    on roles(:app) do 
+       p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    end
+  end
   before :starting, :print_msg
+  after :finish, :clean_up
 end
