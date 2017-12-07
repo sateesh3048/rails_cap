@@ -50,7 +50,7 @@
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server "example.com",
-#   user: "user_name",
+#   user: "deployer"
 #   roles: %w{web app},
 #   ssh_options: {
 #     user: "user_name", # overrides user setting above
