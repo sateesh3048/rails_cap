@@ -40,18 +40,18 @@ server '127.0.0.1', user: "deployer", roles: %w{app web db}
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 namespace :deploy do 
+  desc "create database if not exists"
+  task :create_db do 
+    on roles(:db) do 
+      execute :rake, "db:create"
+    end
+  end
   desc "Make sure local git is in sync with remote."
   task :print_msg do 
     on roles(:app) do
       p "I am inside print_msg<<<<<<<<<<<888888888888888"
     end
   end
-  desc "This is clean up task"
-  task :clean_up do 
-    on roles(:app) do 
-       p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-    end
-  end
-  before :starting, :print_msg
-  after :finishing, :clean_up
+#  before :starting, :print_msg
+ # after :finishing, :clean_up
 end
