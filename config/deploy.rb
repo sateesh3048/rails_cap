@@ -39,3 +39,12 @@ server '127.0.0.1', user: "deployer", roles: %w{app web db}
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+namespace :deploy do 
+  desc "Make sure local git is in sync with remote."
+  task :print_msg do 
+    on roles(:app) do
+      p "I am inside print_msg<<<<<<<<<<<888888888888888"
+    end
+  end
+  before :starting, :print_msg
+end
