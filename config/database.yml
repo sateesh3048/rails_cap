@@ -57,4 +57,4 @@ local:
   <<: *default
   database: rails_cap_local
   username: rails_cap
-  password: <%= ENV['RAILS_CAP_LOCAL_DATABASE_PASSWORD'] %>
+  password: 'root'

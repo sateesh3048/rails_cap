@@ -53,5 +53,5 @@ namespace :deploy do
     end
   end
   before :starting, :print_msg
-  after :finish, :clean_up
+  after :finishing, :clean_up
 end
