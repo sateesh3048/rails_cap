@@ -10,7 +10,7 @@ set :deploy_to, "/var/www/rails_cap"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-server '127.0.0.1:4000', user: "deployer", roles: %w{app web db}
+server 'rcap.qa.com', user: "deployer", roles: %w{app web db}
 
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
