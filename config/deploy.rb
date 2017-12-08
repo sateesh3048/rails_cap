@@ -2,19 +2,21 @@
 lock "~> 3.10.0"
 
 set :application, "rails_cap"
-set :scm, :git
+#set :scm, :git
 set :repo_url, "https://github.com/sateesh3048/rails_cap"
- set :deploy_to, "/var/www/rails_cap"
+set :deploy_to, "/var/www/rails_cap"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-server '127.0.0.1', user: "deployer", roles: %w{app web db}
+server '127.0.0.1:4000', user: "deployer", roles: %w{app web db}
 
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 set :config_files, %w{config/database.yml config/secrets.yml}
+
+set :passenger_restart_with_touch, true
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
